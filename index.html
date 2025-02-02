@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electronic Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <!-- Top Bar -->
+    <div class="bg-primary text-white py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            24/7 Customer Service 1-800-234-5678
+          </div>
+          <div class="col-md-6 text-end">
+            <a href="#" class="text-white mx-2">Shipping &amp; Return</a>
+            <a href="#" class="text-white">Track Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Logo & Search -->
+    <div class="logo-search py-3">
+      <div class="container d-flex align-items-center justify-content-between">
+        <img src="electronic-store-logo.svg" alt="Logo" class="logo" style="max-width: 150px;">
+        <form class="d-flex search-bar">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-light" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link text-white dropdown-toggle" href="#" id="allProductsDropdown" role="button" data-bs-toggle="dropdown">
+                <i class="fas fa-th-large"></i> All Products
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Air Conditioners</a></li>
+                <li><a class="dropdown-item" href="#">Kitchen Appliances</a></li>
+                <li><a class="dropdown-item" href="#">PCs &amp; Laptops</a></li>
+                <li><a class="dropdown-item" href="#">Gadgets &amp; Smart Home</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Home Appliances</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Audio &amp; Video</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Refrigerator</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">New Arrivals</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Today's Deal</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Gift Cards</a></li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center">
+          <a href="#" id="header-cart" class="text-white me-3" onclick="openCartSidebar();">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count" class="badge bg-danger">0</span>
+          </a>
+          <a href="#" class="btn btn-light">Login</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" style="position: relative; height: 100vh;">
+      <div class="container h-100 d-flex justify-content-end align-items-center">
+        <div class="white-box p-5" style="max-width: 450px; background: rgba(255,255,255,0.9);">
+          <div class="logo d-flex align-items-center mb-4">
+            <img src="Logoipsum.svg" alt="logo" style="max-width: 50px;">
+            <h3 class="ms-2">Logoipsum</h3>
+          </div>
+          <h2 class="fw-bold text-dark">The Best Home Entertainment System is Here</h2>
+          <p>Shop now and experience the ultimate entertainment with our premium collection.</p>
+          <a href="#" class="btn btn-dark">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section py-5">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3">
+            <i class="fas fa-truck text-primary fa-2x"></i>
+            <h5 class="mt-2">Free Shipping</h5>
+            <p>When you spend $80 or more</p>
+          </div>
+          <div class="col-md-3">
+            <i class="fas fa-clock text-primary fa-2x"></i>
+            <h5 class="mt-2">24/7 Support</h5>
+            <p>Need help? Contact us anytime</p>
+          </div>
+          <div class="col-md-3">
+            <i class="fas fa-thumbs-up text-primary fa-2x"></i>
+            <h5 class="mt-2">Satisfaction Guarantee</h5>
+            <p>Easy 30-day return policy</p>
+          </div>
+          <div class="col-md-3">
+            <i class="fas fa-lock text-primary fa-2x"></i>
+            <h5 class="mt-2">Secure Payments</h5>
+            <p>Visa, Mastercard, Stripe, PayPal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="categories py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Shop By Categories</h2>
+        <div class="row g-4">
+          <!-- Category Card 1 -->
+          <div class="col-md-3">
+            <div class="category-card text-center">
+              <img src="Air Conditioners.jpg" alt="Air Conditioners" class="img-fluid">
+              <h5 class="mt-2">Air Conditioners</h5>
+              <p>5 products</p>
+            </div>
+          </div>
+          <!-- Category Card 2 -->
+          <div class="col-md-3">
+            <div class="category-card text-center">
+              <img src="Audio & Video.jpg" alt="Audio & Video" class="img-fluid">
+              <h5 class="mt-2">Audio & Video</h5>
+              <p>6 products</p>
+            </div>
+          </div>
+          <!-- Category Card 3 -->
+          <div class="col-md-3">
+            <div class="category-card text-center">
+              <img src="Gadgets.jpg" alt="Gadgets" class="img-fluid">
+              <h5 class="mt-2">Gadgets</h5>
+              <p>4 products</p>
+            </div>
+          </div>
+          <!-- Category Card 4 -->
+          <div class="col-md-3">
+            <div class="category-card text-center">
+              <img src="Kitchen Appliances.jpg" alt="Kitchen Appliances" class="img-fluid">
+              <h5 class="mt-2">Kitchen Appliances</h5>
+              <p>5 products</p>
+            </div>
+          </div>
+          <!-- Category Card 5 -->
+          <div class="col-md-3">
+            <div class="category-card text-center">
+              <img src="Tablet.jpg" alt="Tablet" class="img-fluid">
+              <h5 class="mt-2">Tablet</h5>
+              <p>6 products</p>
+            </div>
+          </div>
+          <!-- Category Card 6 -->
+          <div class="col-md-3">
+            <div class="category-card text-center">
+              <img src="Refrigerator.jpg" alt="Refrigerator" class="img-fluid">
+              <h5 class="mt-2">Refrigerator</h5>
+              <p>3 products</p>
+            </div>
+          </div>
+          <!-- Category Card 7 -->
+          <div class="col-md-3">
+            <div class="category-card text-center">
+              <img src="Laptop.jpg" alt="Laptop" class="img-fluid">
+              <h5 class="mt-2">Laptop</h5>
+              <p>5 products</p>
+            </div>
+          </div>
+          <!-- Category Card 8 -->
+          <div class="col-md-3">
+            <div class="category-card text-center">
+              <img src="Smart Home.jpg" alt="Smart Home" class="img-fluid">
+              <h5 class="mt-2">Smart Home</h5>
+              <p>4 products</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ad Section -->
+    <section class="ad-section container py-5">
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6">
+          <img src="ad 1.jpeg" alt="Ad 1" class="img-fluid ad-img">
+        </div>
+        <div class="col-md-6">
+          <img src="ad 2.jpeg" alt="Ad 2" class="img-fluid ad-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Ads Section -->
+    <section class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card text-center border-0 shadow-sm p-3">
+            <h5 class="fw-bold">Wireless Headphones</h5>
+            <p class="text-muted">Starting at $49</p>
+            <a href="#" class="text-primary text-decoration-none fw-bold">Shop now</a>
+            <div class="img-container">
+              <img src="ad 3.png" alt="Wireless Headphones">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center border-0 shadow-sm p-3">
+            <h5 class="fw-bold">Grooming</h5>
+            <p class="text-muted">Starting at $49</p>
+            <a href="#" class="text-primary text-decoration-none fw-bold">Shop now</a>
+            <div class="img-container">
+              <img src="ad 4.jpg" alt="Grooming">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center border-0 shadow-sm p-3" style="background-color: #FEF6D9;">
+            <h5 class="fw-bold">Video Games</h5>
+            <p class="text-muted">Starting at $49</p>
+            <a href="#" class="text-primary text-decoration-none fw-bold">Shop now</a>
+            <div class="img-container">
+              <img src="ad 5.png" alt="Video Games">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audios and Videos Section -->
+    <section class="container mt-5">
+      <h2 class="text-left mb-4">Audios and Videos</h2>
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="audio1.jpg" class="card-img-top" alt="Audio 1">
+            <div class="cart-overlay" data-title="OLED C1 Series 55” 4k Smart TV" data-price="$199.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">OLED C1 Series 55” 4k Smart TV (3840 x 2160), 120Hz Refresh Rate, AI-Powered 4K, Dolby Cinema, WiSA Ready, Gaming Mode</h5>
+              <div class="rating text-warning mb-2">★★★★☆ (4/5)</div>
+              <p class="card-text">
+                <span class="price">$199.99</span>
+                <span class="sale-price text-danger"><del>$250.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="audio2.jpg" class="card-img-top" alt="Audio 2">
+            <div class="cart-overlay" data-title="Max SR Home Theater Surround Sound Bar" data-price="$149.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Max SR Home Theater Surround Sound Bar HDMI, Optical Cables, Wireless Subwoofer & Two Speakers</h5>
+              <div class="rating text-warning mb-2">★★★☆☆ (3/5)</div>
+              <p class="card-text">
+                <span class="price">$149.99</span>
+                <span class="sale-price text-danger"><del>$180.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="audio3.jpg" class="card-img-top" alt="Audio 3">
+            <div class="cart-overlay" data-title="V-Series 5.1 Home Theater Sound Bar" data-price="$299.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">V-Series 5.1 Home Theater Sound Bar with Dolby Audio, Bluetooth, Wireless Subwoofer, Voice Assistant Compatible</h5>
+              <div class="rating text-warning mb-2">★★★★★ (5/5)</div>
+              <p class="card-text">
+                <span class="price">$299.99</span>
+                <span class="sale-price text-danger"><del>$350.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home Appliances (Gadgets) Section -->
+    <section class="container mt-5">
+      <h2 class="text-left mb-4">Home Appliances</h2>
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="gadget1.jpg" class="card-img-top" alt="Home Appliance 1">
+            <div class="cart-overlay" data-title="Note 10 Pro (GSM ONLY) International Model" data-price="$149.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Note 10 Pro 128GB 6GB RAM Factory Unlocked (GSM ONLY) International Model</h5>
+              <div class="rating text-warning mb-2">★★★★☆ (4/5)</div>
+              <p class="card-text">
+                <span class="price">$149.99</span>
+                <span class="sale-price text-danger"><del>$180.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="gadget2.jpg" class="card-img-top" alt="Home Appliance 2">
+            <div class="cart-overlay" data-title="5G Unlocked Smartphone" data-price="$120.00" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">5G Unlocked Smartphone,12GB RAM+256GB Storage, 120Hz Fluid Display, Hasselblad Quad Camera, 65W Ultra Fast Charge, 50W Wireless Charge</h5>
+              <div class="rating text-warning mb-2">★★★☆☆ (3/5)</div>
+              <p class="card-text">
+                <span class="price">$120.00</span>
+                <span class="sale-price text-danger"><del>$150.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="gadget3.jpg" class="card-img-top" alt="Home Appliance 3">
+            <div class="cart-overlay" data-title="13 Ultrabook Gaming Laptop" data-price="$179.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">13 Ultrabook Gaming Laptop: Intel Core i7-1165G7, NVIDIA GeForce GTX 1650 Ti Max-Q, 13.3″ 1080p 120Hz, 16GB RAM, 512GB SSD, CNC Aluminum, Chroma RGB, Thunderbolt 4</h5>
+              <div class="rating text-warning mb-2">★★★★☆ (4/5)</div>
+              <p class="card-text">
+                <span class="price">$179.99</span>
+                <span class="sale-price text-danger"><del>$220.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Air Conditioners Section -->
+    <section class="container mt-5">
+      <h2 class="text-left mb-4">Air Conditioners</h2>
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="air1.jpg" class="card-img-top" alt="Air Conditioner 1">
+            <div class="cart-overlay" data-title="Dual Hose Portable Air Conditioner" data-price="$499.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Dual Hose Portable Air Conditioner, Dehumidifier, Fan with Activated Carbon Filter in Platinum</h5>
+              <div class="rating text-warning mb-2">★★★☆☆ (3/5)</div>
+              <p class="card-text">
+                <span class="price">$499.99</span>
+                <span class="sale-price text-danger"><del>$600.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="air2.jpg" class="card-img-top" alt="Air Conditioner 2">
+            <div class="cart-overlay" data-title="Air Conditioner 5000 BTU" data-price="$549.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Air Conditioner 5000 BTU, Efficient Cooling for Smaller Areas Like Bedrooms and Guest Rooms</h5>
+              <div class="rating text-warning mb-2">★★★★☆ (4/5)</div>
+              <p class="card-text">
+                <span class="price">$549.99</span>
+                <span class="sale-price text-danger"><del>$700.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="air3.jpg" class="card-img-top" alt="Air Conditioner 3">
+            <div class="cart-overlay" data-title="Air Conditioner 5000 BTU" data-price="$599.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Air Conditioner 5000 BTU, Efficient Cooling for Smaller Areas Like Bedrooms and Guest Rooms</h5>
+              <div class="rating text-warning mb-2">★★★★☆ (4/5)</div>
+              <p class="card-text">
+                <span class="price">$599.99</span>
+                <span class="sale-price text-danger"><del>$750.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ad Section Under Air Conditioners-->
+    <section class="ad-section single-ad">
+        <img src="ad 6.jpg" alt="Ad 6" class="img-fluid ad-img">
+    </section>
+    
+
+    <!-- Kitchen Appliances Section -->
+    <section class="container mt-5">
+      <h2 class="text-left mb-4">Kitchen Appliances</h2>
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="kitchen1.jpg" class="card-img-top" alt="Kitchen Appliance 1">
+            <div class="cart-overlay" data-title="Kitchen Essentials Compact 0.9 Cubic Feet" data-price="$79.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">0.9 Cubic Feet Capacity 900 Watts Kitchen Essentials for the Countertop Stainless Steel</h5>
+              <div class="rating text-warning mb-2">★★★★☆ (4/5)</div>
+              <p class="card-text">
+                <span class="price">$79.99</span>
+                <span class="sale-price text-danger"><del>$100.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="kitchen2.jpg" class="card-img-top" alt="Kitchen Appliance 2">
+            <div class="cart-overlay" data-title="Double Door Mini Fridge" data-price="$89.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Double Door Mini Fridge with Freezer for Office or Dorm with Adjustable Removable Glass Shelves</h5>
+              <div class="rating text-warning mb-2">★★★★☆ (4/5)</div>
+              <p class="card-text">
+                <span class="price">$89.99</span>
+                <span class="sale-price text-danger"><del>$110.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="kitchen3.jpg" class="card-img-top" alt="Kitchen Appliance 3">
+            <div class="cart-overlay" data-title="36″ Side-by-Side Refrigerator" data-price="$99.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">36″ Side-by-Side Refrigerator and Freezer with 25 Cubic Ft. Total Capacity, Black</h5>
+              <div class="rating text-warning mb-2">★★★★★ (5/5)</div>
+              <p class="card-text">
+                <span class="price">$99.99</span>
+                <span class="sale-price text-danger"><del>$130.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home Appliances Section -->
+    <section class="container mt-5">
+      <h2 class="text-left mb-4">Home Appliances</h2>
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="home1.jpg" class="card-img-top" alt="Home Appliance 1">
+            <div class="cart-overlay" data-title="Full-Automatic Compact Washer" data-price="$149.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Full-Automatic Compact Washer with Wheels, 1.6 cu. ft, 11 lbs capacity with 6 Wash Programs Washer</h5>
+              <div class="rating text-warning mb-2">★★★★☆ (4/5)</div>
+              <p class="card-text">
+                <span class="price">$149.99</span>
+                <span class="sale-price text-danger"><del>$180.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="home2.jpg" class="card-img-top" alt="Home Appliance 2">
+            <div class="cart-overlay" data-title="Home Speaker 500" data-price="$120.00" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Home Speaker 500: Smart Bluetooth Speaker with Alexa Voice Control Built-In, White</h5>
+              <div class="rating text-warning mb-2">★★★☆☆ (3/5)</div>
+              <p class="card-text">
+                <span class="price">$120.00</span>
+                <span class="sale-price text-danger"><del>$150.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 product-card">
+            <img src="home3.jpg" class="card-img-top" alt="Home Appliance 3">
+            <div class="cart-overlay" data-title="Small Space Heat Pump Dryer" data-price="$179.99" onclick="openCartSidebar(this);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Small Space Heat Pump Dryer with Sensor Dry, 12 Preset Machine Cycles, 40 Minute Express Drying</h5>
+              <div class="rating text-warning mb-2">★★★★☆ (4/5)</div>
+              <p class="card-text">
+                <span class="price">$179.99</span>
+                <span class="sale-price text-danger"><del>$220.00</del></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Deals Section -->
+    <section class="brand-deals">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+          <div class="col-md-6 position-absolute text-box">
+            <p class="text-uppercase text-muted">Brand's deal</p>
+            <h2 class="fw-bold">Save up to <strong>$200</strong> on select Samsung washing machines</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="#" class="btn btn-dark">Shop Now</a>
+          </div>
+          <!-- Image -->
+          <div class="col-md-6 offset-md-6">
+            <img src="brand deal.jpg" class="img-fluid" alt="Samsung Washing Machine">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Brands Section -->
+    <div class="container my-5">
+      <h2 class="fw-bold">Top Brands</h2>
+      <div class="row text-center bg-light p-3 rounded">
+        <div class="col-2">
+          <img src="logo1.svg" class="img-fluid" alt="Brand 1">
+        </div>
+        <div class="col-2">
+          <img src="logo2.svg" class="img-fluid" alt="Brand 2">
+        </div>
+        <div class="col-2">
+          <img src="logo3.svg" class="img-fluid" alt="Brand 3">
+        </div>
+        <div class="col-2">
+          <img src="logo4.svg" class="img-fluid" alt="Brand 4">
+        </div>
+        <div class="col-2">
+          <img src="logo5.svg" class="img-fluid" alt="Brand 5">
+        </div>
+        <div class="col-2">
+          <img src="logo6.svg" class="img-fluid" alt="Brand 6">
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="container my-5">
+      <h2 class="fw-bold">What is everyone saying?</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Dolores porro laboriosam molestias est quo. Et et eos. Ab error modi labore sed eaque est.</p>
+          <div class="d-flex align-items-center">
+            <img src="user1.jpg" class="rounded-circle me-2" width="30" alt="User 1">
+            <span><strong>Rafael Stokes</strong></span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Dolorem et cumque consequuntur consequatur cumque eligendi voluptate.</p>
+          <div class="d-flex align-items-center">
+            <img src="user2.jpg" class="rounded-circle me-2" width="30" alt="User 2">
+            <span><strong>Chelsea Turner</strong></span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Et eum neque ipsum quaerat ratione qui dolore eos.</p>
+          <div class="d-flex align-items-center">
+            <img src="user3.jpg" class="rounded-circle me-2" width="30" alt="User 3">
+            <span><strong>Jacqueline Mueller</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+      <div class="container">
+        <!-- First Row -->
+        <div class="row align-items-center">
+          <div class="col-md-4 d-flex justify-content-between">
+            <div>
+              <p class="fw-bold">Expert advice</p>
+              <h5>123-456-7890</h5>
+            </div>
+            <div>
+              <p class="fw-bold">Customer service</p>
+              <h5>1-222-345-6789</h5>
+            </div>
+          </div>
+          <!-- Contact Us -->
+          <div class="col-md-4 text-center">
+            <p><a href="#" class="text-primary">Have any questions?</a></p>
+            <h5><a href="#" class="text-dark fw-bold">Contact us</a></h5>
+          </div>
+          <!-- Team Image -->
+          <div class="col-md-4 text-end">
+            <img src="team.png" class="img-fluid" width="200" alt="Team">
+          </div>
+        </div>
+        <hr>
+        <!-- Second Row (Newsletter) -->
+        <div class="row align-items-center">
+          <div class="col-md-12 d-flex justify-content-between align-items-center">
+            <p class="fw-bold mb-0">
+              <i class="bi bi-envelope" style="font-size: 1.5rem;"></i>
+              Subscribe to our newsletter
+            </p>
+            <p class="text-muted mb-0">Sign up for all the latest news and special offers</p>
+            <form class="d-flex">
+              <input type="email" class="form-control me-2" placeholder="Your email">
+              <button class="btn btn-dark">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <hr>
+        <!-- Third Row (Logo, Shop, Need Help, Contact) -->
+        <div class="row justify-content-between align-items-center">
+          <!-- Logo -->
+          <div class="col-md-3">
+            <img src="logo7.svg" alt="Logo" class="logo" style="max-width: 150px;">
+          </div>
+          <!-- Shop -->
+          <div class="col-md-3">
+            <p class="fw-bold">Shop</p>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-primary">Hot deals</a></li>
+              <li><a href="#" class="text-primary">Categories</a></li>
+              <li><a href="#" class="text-primary">Brands</a></li>
+              <li><a href="#" class="text-primary">Rebates</a></li>
+              <li><a href="#" class="text-primary">Weekly deals</a></li>
+            </ul>
+          </div>
+          <!-- Need Help? -->
+          <div class="col-md-3">
+            <p class="fw-bold">Need help?</p>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-primary">Contact</a></li>
+              <li><a href="#" class="text-primary">Order tracking</a></li>
+              <li><a href="#" class="text-primary">FAQs</a></li>
+              <li><a href="#" class="text-primary">Return policy</a></li>
+              <li><a href="#" class="text-primary">Privacy policy</a></li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div class="col-md-3">
+            <p class="fw-bold">Contact</p>
+            <ul class="list-unstyled">
+              <li>123 Fifth Avenue, New York, NY</li>
+              <li>10160</li>
+              <li><a href="mailto:contact@info.com" class="text-primary">contact@info.com</a></li>
+              <li>929-242-6868</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Copyright Footer -->
+    <footer class="footer mt-5 py-3" style="background-color: #121926; color: white;">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Side: Copyright Text -->
+          <div class="col-md-6 text-md-start text-center">
+            &copy; 2025 Electronic Store. Powered by Electronic Store
+          </div>
+          <!-- Right Side: Payment Icons -->
+          <div class="col-md-6 text-md-end text-center">
+            <img src="visa.svg" alt="Visa" style="width: 40px; margin-right: 10px;">
+            <img src="mastercard.svg" alt="MasterCard" style="width: 40px; margin-right: 10px;">
+            <img src="paypal.jfif" alt="PayPal" style="width: 40px;">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Cart Sidebar (Hidden by Default) -->
+  <div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header d-flex justify-content-between align-items-center p-3">
+      <h4>Your Cart</h4>
+      <button id="close-cart" class="btn-close" onclick="closeCartSidebar();"></button>
+    </div>
+    <div class="cart-body p-3">
+      <ul id="cart-items" class="list-group mb-3">
+      </ul>
+      <!-- Subtotal Section -->
+      <div class="cart-subtotal d-flex justify-content-between fw-bold">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+    </div>
+    <div class="cart-footer p-3">
+      <button class="btn btn-primary w-100">Checkout</button>
+    </div>
+  </div>
+
+  <div id="cart-overlay-bg" class="cart-overlay-bg" onclick="closeCartSidebar();"></div>
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
